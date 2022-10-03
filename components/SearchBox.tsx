@@ -1,8 +1,7 @@
-import { useState } from 'react';
-import type { NextPage, GetStaticProps } from 'next';
+import type { NextPage } from 'next';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import genresList from '../data/genres';
+import genresList from 'data/genres';
 
 interface SearchBoxProps {
   onSubmit: (genre: String | null) => void

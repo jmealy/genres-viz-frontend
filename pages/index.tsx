@@ -1,10 +1,17 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import SearchBox from '../components/SearchBox'
-const Home: NextPage = () => {
+import type { NextPage } from 'next';
+import { useState } from 'react';
+import Head from 'next/head';
+import SearchBox from 'components/SearchBox';
+import Graph from 'components/Graph';
 
-  const onGenreSelect = (genre: String | null) => {
-    console.log(genre);
+const Home: NextPage = () => {
+  const [genreGraphData, setGenreGraphData] = useState();
+
+  const onGenreSelect = async (genre: String | null) => {
+    const data = await fetch(`/api/genresInfo/${genre}`)
+      .then((res) => res.json());
+    setGenreGraphData(data);
+    console.log(data); // update state with this data and pass it down to the graph!!!
   }
 
 
@@ -19,10 +26,8 @@ const Home: NextPage = () => {
           Search Genres
         </h1>
         <SearchBox onSubmit={onGenreSelect} />
+        <Graph genre={genreGraphData} />
       </main>
-
-      <footer className="flex h-24 w-full items-center justify-center border-t">
-      </footer>
     </div>
   )
 }
