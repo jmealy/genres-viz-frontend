@@ -1,19 +1,14 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import genreData from '../../../data/genrePopularities.json';
-
-type GenreData = {
-  x: string,
-  y: number,
-}[];
-type GenreDataKey = keyof typeof genreData;
+import { GenreGraphData } from 'types';
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<GenreData>
+  res: NextApiResponse<GenreGraphData>
 ) {
 
   const { genre } = req.query;
-  const graphData = genreData[genre as GenreDataKey]
+  const graphData = genreData[genre as keyof typeof genreData]
 
   res.status(200).json(graphData);
 }

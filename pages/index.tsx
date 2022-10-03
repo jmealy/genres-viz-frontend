@@ -5,7 +5,7 @@ import SearchBox from 'components/SearchBox';
 import Graph from 'components/Graph';
 
 const Home: NextPage = () => {
-  const [genreGraphData, setGenreGraphData] = useState();
+  const [genreGraphData, setGenreGraphData] = useState(null);
 
   const onGenreSelect = async (genre: String | null) => {
     const data = await fetch(`/api/genresInfo/${genre}`)
