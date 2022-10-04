@@ -11,7 +11,6 @@ const Home: NextPage = () => {
     const data = await fetch(`/api/genresInfo/${genre}`)
       .then((res) => res.json());
     setGenreGraphData(data);
-    console.log(data); // update state with this data and pass it down to the graph!!!
   }
 
 

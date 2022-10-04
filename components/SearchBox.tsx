@@ -14,7 +14,7 @@ const SearchBox: NextPage<SearchBoxProps> = (props) => {
   return (
     <Autocomplete
       onChange={(event: any, newValue: string | null) => {
-        onSubmit(newValue);
+        if (newValue !== null) onSubmit(newValue);
       }}
       disablePortal
       options={genresList}

@@ -51,7 +51,6 @@ const Graph: NextPage<GraphProps> = (props: any) => {
     },
   };
 
-
   return (
     <Line options={options} data={data} />
   )
