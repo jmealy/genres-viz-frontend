@@ -21,13 +21,13 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="flex w-full flex-1 flex-col items-center justify-center px-2 sm:px-20 text-center">
-        <h1 className="text-4xl font-bold py-4">
+        <h1 className="text-xl sm:text-4xl font-bold py-4">
           Genre Popularities Over time
         </h1>
         <div className="" >
           <SearchBox onSubmit={onGenreSelect} />
         </div>
-        <div className="w-full h-full min-h-[26rem] pr-8 mt-16 sm:mt-8">
+        <div className="flex flex-1 w-full pr-8 py-16 sm:py-8 ">
           <Graph genre={genreGraphData} />
         </div>
       </main>
