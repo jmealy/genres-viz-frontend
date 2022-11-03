@@ -17,12 +17,12 @@ const Home: NextPage = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
-        <title>Genre Viz</title>
+        <title>Genre Popularity Graph</title>
       </Head>
 
       <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Search Genres
+        <h1 className="text-4xl font-bold py-4">
+          Genre Popularities Over time
         </h1>
         <SearchBox onSubmit={onGenreSelect} />
         <Graph genre={genreGraphData} />

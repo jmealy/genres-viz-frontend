@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 import type { GenreGraphData } from 'types';
-import moment from 'moment';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -28,7 +27,7 @@ ChartJS.register(
 interface GraphProps {
   genre: GenreGraphData | null
 }
-const Graph: NextPage<GraphProps> = (props: any) => {
+const Graph: NextPage<GraphProps> = (props: GraphProps) => {
   const { genre } = props;
   const data = {
     datasets: [
@@ -36,6 +35,7 @@ const Graph: NextPage<GraphProps> = (props: any) => {
         label: 'graph data',
         data: genre,
         borderColor: 'rgb(255, 99, 132)',
+        // yAxisID: 'yAxis',
       }
     ],
   };
@@ -45,10 +45,19 @@ const Graph: NextPage<GraphProps> = (props: any) => {
     plugins: {
       legend: false,
       title: {
-        display: true,
+        display: false,
         text: 'Popularity of x over time',
       },
     },
+    scales: {
+      y: {
+        title: {
+          display: true,
+          text: 'Number of Hits'
+          // text: '# of Hits In Weekly Top 200 Per Year'
+        }
+      }
+    }
   };
 
   return (

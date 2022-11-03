@@ -7,7 +7,6 @@ interface SearchBoxProps {
   onSubmit: (genre: String | null) => void
 }
 
-
 const SearchBox: NextPage<SearchBoxProps> = (props) => {
   const { onSubmit } = props;
 
