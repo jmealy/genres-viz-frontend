@@ -15,17 +15,21 @@ const Home: NextPage = () => {
 
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div className="flex min-h-screen flex-col items-center justify-center">
       <Head>
         <title>Genre Popularity Graph</title>
       </Head>
 
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
+      <main className="flex w-full flex-1 flex-col items-center justify-center px-2 sm:px-20 text-center">
         <h1 className="text-4xl font-bold py-4">
           Genre Popularities Over time
         </h1>
-        <SearchBox onSubmit={onGenreSelect} />
-        <Graph genre={genreGraphData} />
+        <div className="" >
+          <SearchBox onSubmit={onGenreSelect} />
+        </div>
+        <div className="w-full h-full min-h-[26rem] pr-8 mt-16 sm:mt-8">
+          <Graph genre={genreGraphData} />
+        </div>
       </main>
     </div>
   )

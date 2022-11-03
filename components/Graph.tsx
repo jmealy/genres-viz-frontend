@@ -35,18 +35,18 @@ const Graph: NextPage<GraphProps> = (props: GraphProps) => {
         label: 'graph data',
         data: genre,
         borderColor: 'rgb(255, 99, 132)',
-        // yAxisID: 'yAxis',
       }
     ],
   };
 
   const options: any = {
+    maintainAspectRatio: false,
     responsive: true,
     plugins: {
       legend: false,
       title: {
         display: false,
-        text: 'Popularity of x over time',
+        text: 'Top 200 Hits Per Year',
       },
     },
     scales: {
@@ -54,7 +54,6 @@ const Graph: NextPage<GraphProps> = (props: GraphProps) => {
         title: {
           display: true,
           text: 'Number of Hits'
-          // text: '# of Hits In Weekly Top 200 Per Year'
         }
       }
     }
